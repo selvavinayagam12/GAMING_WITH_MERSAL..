@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#070b18" />
+  <meta name="description" content="MR MERSAL YT — Free Fire MAX gaming portfolio, gameplay highlights, skills and community." />
+  <title>MR MERSAL YT | Gaming Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #070b18; --panel: #0d1428; --panel2: #101b34;
+      --cyan: #00e5ff; --blue: #5577ff; --purple: #a855f7;
+      --white: #f4f8ff; --muted: #9aa9c6; --line: rgba(0,229,255,.18);
+      --glow: 0 0 22px rgba(0,229,255,.24);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body {
+      color: var(--white); background: var(--bg); font-family: 'Rajdhani', sans-serif;
+      font-size: 18px; overflow-x: hidden;
+      background-image: radial-gradient(ellipse at 80% 10%, rgba(85,119,255,.15), transparent 34%),
+                        radial-gradient(ellipse at 8% 48%, rgba(0,229,255,.08), transparent 32%);
+    }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    .grid-bg { position: fixed; inset: 0; pointer-events: none; opacity: .15; z-index: -1;
+      background-image: linear-gradient(rgba(0,229,255,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(0,229,255,.08) 1px, transparent 1px);
+      background-size: 48px 48px; mask-image: linear-gradient(to bottom, black, transparent 88%); }
+    .container { width: min(1140px, calc(100% - 40px)); margin: auto; }
+    header { position: sticky; top: 0; z-index: 20; background: rgba(7,11,24,.86); backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 22px; }
+    .brand { font-family: Orbitron, sans-serif; font-size: 16px; font-weight: 900; letter-spacing: 1px; }
+    .brand span { color: var(--cyan); text-shadow: 0 0 14px rgba(0,229,255,.65); }
+    .nav-links { display: flex; align-items: center; gap: 26px; color: var(--muted); font-weight: 700; }
+    .nav-links a:hover, .nav-links a.active { color: var(--cyan); }
+    .menu-btn { display: none; border: 1px solid var(--line); color: var(--cyan); background: transparent; padding: 8px 12px; border-radius: 8px; }
+    .btn { display: inline-flex; justify-content: center; align-items: center; gap: 9px; padding: 13px 21px; border-radius: 8px; border: 1px solid var(--cyan); color: #031018; background: var(--cyan); font-weight: 800; letter-spacing: .6px; box-shadow: var(--glow); transition: .25s; cursor: pointer; }
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 0 30px rgba(0,229,255,.42); }
+    .btn.outline { color: var(--cyan); background: transparent; }
+    .eyebrow { color: var(--cyan); text-transform: uppercase; letter-spacing: 3px; font-weight: 700; font-size: 14px; }
+    h1,h2,h3 { font-family: Orbitron, sans-serif; line-height: 1.2; }
+    h2 { font-size: clamp(25px, 4vw, 38px); margin: 10px 0 28px; }
+    .section { padding: 88px 0; }
+    .hero { min-height: 660px; display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; gap: 45px; padding-top: 55px; padding-bottom: 70px; }
+    .hero h1 { font-size: clamp(40px, 7vw, 76px); letter-spacing: -2px; margin: 15px 0; }
+    .hero h1 span { color: var(--cyan); text-shadow: 0 0 28px rgba(0,229,255,.45); display: block; }
+    .hero p { color: var(--muted); max-width: 600px; font-size: 21px; line-height: 1.55; margin-bottom: 27px; }
+    .hero-actions { display: flex; gap: 13px; flex-wrap: wrap; }
+    .hero-visual { min-height: 420px; display: grid; place-items: center; position: relative; }
+    .orbit { width: min(370px, 78vw); aspect-ratio: 1; border: 1px solid rgba(0,229,255,.38); border-radius: 50%; display: grid; place-items: center; box-shadow: 0 0 70px rgba(0,229,255,.12), inset 0 0 55px rgba(85,119,255,.12); position: relative; }
+    .orbit:before,.orbit:after { content:""; position:absolute; inset: 20px; border: 1px dashed rgba(168,85,247,.45); border-radius:50%; animation: spin 24s linear infinite; }
+    .orbit:after { inset: -15px; border-color: rgba(0,229,255,.2); animation-direction: reverse; animation-duration: 35s; }
+    .avatar { width: 72%; aspect-ratio: 1; border-radius: 50%; display: grid; place-items: center; text-align: center; padding: 22px; background: linear-gradient(145deg,#18294d,#0b1020 62%); border: 2px solid var(--cyan); box-shadow: 0 0 35px rgba(0,229,255,.25); }
+    .avatar strong { font-family: Orbitron; font-size: clamp(25px,4vw,43px); color: var(--cyan); text-shadow: 0 0 18px rgba(0,229,255,.55); }
+    .avatar small { display: block; color: var(--muted); letter-spacing: 3px; margin-top: 10px; }
+    .floating-tag { position:absolute; padding: 10px 14px; background: rgba(13,20,40,.9); border: 1px solid var(--line); border-radius: 8px; color: var(--cyan); font-weight: 700; box-shadow: var(--glow); }
+    .tag-one { top: 12%; right: 0; } .tag-two { bottom: 12%; left: 0; }
+    .stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 15px; margin-top: 35px; }
+    .stat { padding: 18px; background: rgba(13,20,40,.75); border: 1px solid var(--line); border-radius: 10px; }
+    .stat strong { display:block; font: 800 23px Orbitron; color: var(--cyan); }
+    .stat span { color: var(--muted); font-size: 15px; }
+    .section-head { max-width: 650px; }
+    .section-head p { color: var(--muted); font-size: 19px; }
+    .cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+    .card { padding: 25px; background: linear-gradient(145deg,rgba(16,27,52,.95),rgba(10,15,30,.95)); border: 1px solid var(--line); border-radius: 13px; transition: .25s; }
+    .card:hover { transform: translateY(-5px); border-color: rgba(0,229,255,.65); box-shadow: var(--glow); }
+    .card .icon { width: 46px; height: 46px; display:grid; place-items:center; border-radius: 10px; background: rgba(0,229,255,.1); color: var(--cyan); font-size: 23px; margin-bottom: 17px; }
+    .card h3 { font-size: 17px; margin-bottom: 10px; }
+    .card p { color: var(--muted); line-height: 1.5; }
+    .split { display:grid; grid-template-columns: .85fr 1.15fr; gap: 50px; align-items:center; }
+    .profile-box { padding: 30px; border: 1px solid var(--line); border-radius: 14px; background: linear-gradient(145deg,#101b34,#090e1e); box-shadow: var(--glow); }
+    .profile-name { font: 800 25px Orbitron; color: var(--cyan); margin-bottom: 8px; }
+    .profile-sub { color: var(--muted); margin-bottom: 20px; }
+    .info-row { display:flex; justify-content:space-between; gap:15px; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.07); }
+    .info-row span:first-child { color: var(--muted); } .info-row span:last-child { text-align:right; font-weight:700; }
+    .skill { margin: 18px 0; }
+    .skill-top { display:flex; justify-content:space-between; margin-bottom:7px; font-weight:700; }
+    .track { height: 9px; background:#202b45; border-radius:20px; overflow:hidden; }
+    .track i { display:block; height:100%; width:var(--level); background:linear-gradient(90deg,var(--blue),var(--cyan)); border-radius:20px; box-shadow:0 0 14px rgba(0,229,255,.5); }
+    .video-card { min-height: 190px; display:flex; flex-direction:column; justify-content:space-between; background: radial-gradient(circle at 80% 20%,rgba(85,119,255,.2),transparent 40%),linear-gradient(145deg,#111c36,#090e1d); }
+    .video-card .play { font-size: 34px; color:var(--cyan); }
+    .cta { text-align:center; padding: 55px 25px; border:1px solid var(--line); border-radius:16px; background: radial-gradient(ellipse at 50% 0%,rgba(0,229,255,.13),transparent 65%),#0c1428; }
+    .cta p { color:var(--muted); margin: 12px auto 23px; max-width:600px; }
+    footer { border-top:1px solid var(--line); padding:28px 0; color:var(--muted); }
+    .footer-inner { display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap; }
+    .socials { display:flex; gap:18px; color:var(--cyan); font-weight:700; }
+    .reveal { opacity:0; transform:translateY(22px); transition:opacity .65s,transform .65s; }
+    .reveal.show { opacity:1; transform:none; }
+    @keyframes spin { to { transform:rotate(360deg); } }
+    @media (max-width: 800px) {
+      .menu-btn { display:block; }
+      .nav-links { display:none; position:absolute; top:76px; left:0; right:0; padding:20px; background:#090f20; border-bottom:1px solid var(--line); flex-direction:column; gap:18px; }
+      .nav-links.open { display:flex; }
+      .hero,.split { grid-template-columns:1fr; text-align:center; }
+      .hero { min-height:auto; padding-top:65px; }
+      .hero p { margin-left:auto; margin-right:auto; }
+      .hero-actions { justify-content:center; }
+      .hero-visual { min-height:370px; }
+      .stats { max-width:600px; margin-left:auto; margin-right:auto; }
+      .cards { grid-template-columns:1fr 1fr; }
+      .section-head { margin:0 auto; text-align:center; }
+    }
+    @media (max-width: 540px) {
+      .container { width:min(100% - 28px,1140px); }
+      .section { padding:65px 0; }
+      .cards { grid-template-columns:1fr; }
+      .stats { gap:8px; }
+      .stat { padding:13px 8px; }
+      .stat strong { font-size:17px; }
+      .stat span { font-size:13px; }
+      .hero h1 { letter-spacing:-1px; }
+      .info-row { font-size:16px; }
+      .floating-tag { font-size:14px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *,*::before,*::after { scroll-behavior:auto !important; animation-duration:.01ms !important; transition-duration:.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home">GAMING <span>WITH MERSAL</span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false">☰</button>
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#home" class="active">HOME</a>
+        <a href="#about">ABOUT</a>
+        <a href="#skills">SKILLS</a>
+        <a href="#highlights">HIGHLIGHTS</a>
+        <a href="#contact">JOIN ME</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="container hero" id="home">
+      <div>
+        <div class="eyebrow">⚡ Free Fire MAX Gamer Portfolio</div>
+        <h1>MR MERSAL <span>YT</span></h1>
+        <p>Welcome to my gaming world. Daily gaming vibes, intense matches, clean headshots and a community that plays together. Let's make every match memorable!</p>
+        <div class="hero-actions">
+          <a class="btn" href="#highlights">▶ WATCH HIGHLIGHTS</a>
+          <a class="btn outline" href="https://www.youtube.com/@selva_gaming_live" target="_blank" rel="noopener">▶ SUBSCRIBE</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong>FF MAX</strong><span>Main game</span></div>
+          <div class="stat"><strong>DAILY</strong><span>Gaming sessions</span></div>
+          <div class="stat"><strong>1 TEAM</strong><span>One community</span></div>
+        </div>
+      </div>
+      <div class="hero-visual" aria-label="MR Mersal YT gamer emblem">
+        <div class="orbit">
+          <div class="avatar"><div><strong>MR<br>MERSAL</strong><small>GAMING • YT</small></div></div>
+        </div>
+        <div class="floating-tag tag-one">⚡ HEADSHOT MODE</div>
+        <div class="floating-tag tag-two">🎮 LET'S PLAY!</div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">Who is behind the screen?</div>
+          <h2>ABOUT THE GAMER</h2>
+          <p>I'm MR MERSAL YT, a gaming creator who loves Free Fire MAX, exciting gameplay and connecting with other players. This portfolio is my space to share my gaming journey and best moments.</p>
+        </div>
+        <div class="cards" style="margin-top:30px">
+          <article class="card reveal"><div class="icon">🎯</div><h3>MY MISSION</h3><p>Build a positive gaming community where players can meet, team up and enjoy the game.</p></article>
+          <article class="card reveal"><div class="icon">🔥</div><h3>MY GAMEPLAY</h3><p>Action-packed matches, one-tap attempts, clutch moments and entertaining highlights.</p></article>
+          <article class="card reveal"><div class="icon">🤝</div><h3>PLAY TOGETHER</h3><p>Join announced live sessions and custom rooms. Follow the channel for updates and schedules.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="container split">
+        <div class="reveal">
+          <div class="eyebrow">Player profile</div>
+          <h2>GAMER PORTFOLIO</h2>
+          <p style="color:var(--muted);line-height:1.6">Every match is a chance to learn, improve and have fun. Add your in-game details below to make this profile your own.</p>
+          <div class="profile-box" style="margin-top:24px">
+            <div class="profile-name">MR MERSAL YT</div>
+            <div class="profile-sub">Free Fire MAX • Gaming Creator</div>
+            <div class="info-row"><span>In-game name</span><span>ADD YOUR NAME</span></div>
+            <div class="info-row"><span>Player UID</span><span>ADD YOUR UID</span></div>
+            <div class="info-row"><span>Region</span><span>India</span></div>
+            <div class="info-row"><span>Team status</span><span>Open to play</span></div>
+          </div>
+        </div>
+        <div class="reveal">
+          <div class="eyebrow">My play style</div>
+          <h2>GAMING SKILLS</h2>
+          <div class="skill"><div class="skill-top"><span>Headshot Focus</span><span>Learning</span></div><div class="track"><i style="--level:82%"></i></div></div>
+          <div class="skill"><div class="skill-top"><span>Close-Range Battles</span><span>Learning</span></div><div class="track"><i style="--level:76%"></i></div></div>
+          <div class="skill"><div class="skill-top"><span>Team Play</span><span>Learning</span></div><div class="track"><i style="--level:88%"></i></div></div>
+          <div class="skill"><div class="skill-top"><span>Game Sense</span><span>Improving</span></div><div class="track"><i style="--level:72%"></i></div></div>
+          <p style="color:var(--muted);font-size:15px;margin-top:18px">Skill bars are design placeholders. Change them to match your real gameplay.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="highlights">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">Best moments</div><h2>GAMEPLAY HIGHLIGHTS</h2>
+          <p>Watch my latest Shorts, live streams and match highlights on YouTube.</p>
+        </div>
+        <div class="cards" style="margin-top:30px">
+          <a class="card video-card reveal" href="https://www.youtube.com/@selva_gaming_live/shorts" target="_blank" rel="noopener"><span class="play">▶</span><div><h3>YOUTUBE SHORTS</h3><p>Quick highlights, headshots and exciting moments.</p></div></a>
+          <a class="card video-card reveal" href="https://www.youtube.com/@selva_gaming_live/live" target="_blank" rel="noopener"><span class="play">◉</span><div><h3>LIVE GAMING</h3><p>Catch live sessions and play-along announcements.</p></div></a>
+          <a class="card video-card reveal" href="https://www.youtube.com/@selva_gaming_live" target="_blank" rel="noopener"><span class="play">✦</span><div><h3>ALL VIDEOS</h3><p>Visit the channel for the full gaming collection.</p></div></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="cta reveal">
+          <div class="eyebrow">Your squad is waiting</div>
+          <h2>READY TO PLAY?</h2>
+          <p>Subscribe to GAMING WITH MERSAL, follow the updates and join when the next gaming session or tournament is announced. Play fair, stay friendly and enjoy the game!</p>
+          <div class="hero-actions" style="justify-content:center">
+            <a class="btn" href="https://www.youtube.com/@selva_gaming_live" target="_blank" rel="noopener">SUBSCRIBE ON YOUTUBE</a>
+            <a class="btn outline" href="https://www.youtube.com/@selva_gaming_live" target="_blank" rel="noopener">GET UPDATES</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> <strong>MR MERSAL YT</strong> · GAMING WITH MERSAL</div>
+      <div class="socials"><a href="https://www.youtube.com/@selva_gaming_live" target="_blank" rel="noopener">YouTube ↗</a><a href="#home">Back to top ↑</a></div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(open));
+      menuBtn.textContent = open ? '✕' : '☰';
+    });
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        menuBtn.textContent = '☰';
+      });
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    const sections = [...document.querySelectorAll('main section[id]')];
+    const navObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          document.querySelectorAll('.nav-links a').forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id));
+        }
+      });
+    }, { rootMargin: '-35% 0px -55% 0px' });
+    sections.forEach(section => navObserver.observe(section));
+  </script>
+</body>
+</html>
